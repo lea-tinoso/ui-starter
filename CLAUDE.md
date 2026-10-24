@@ -1,26 +1,29 @@
 # CLAUDE.md
 
-Personal web app starter. Every project made from this template ships with Lea's UI/UX kit: three forked
-repos in `ui-kit/` (git submodules) that hold Claude skills and design references. There is no component
-library to import. The kit steers how UI gets designed and written.
+Personal web app starter. Every project made from this template ships with Lea's UI/UX kit: Claude skills
+copied from her forks into `.claude/skills/`, plus a library of design references in `ui-kit/` (a git
+submodule). There is no component library to import. The kit steers how UI gets designed and written.
 
 ## Rule: build UI from the kit first
 
 Before designing or writing any page, component or style, load the `ui-ux` skill
 (`.claude/skills/ui-ux/SKILL.md`). It says which kit skill to use for which job and gives the step-by-step.
-Do not invent a visual style from scratch when the kit covers it.
+Do not invent a visual style from scratch when the kit covers it. Never pick the visual direction for Lea:
+show 2 or 3 directions with clickable sample sites and wait for her pick.
 
-## What is in `ui-kit/`
+## What is in the kit
 
-| Fork                       | What it is                                                                                                                            | Use it when                                                                                                                                             |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ui-kit/awesome-design-md` | 84 `DESIGN.md` files, each a design system taken from a real site (colors, type, radii, components)                                   | Starting a project or a new look. Copy one to the project root with `npm run design -- <name>`. The root `DESIGN.md` is the source of truth for tokens. |
-| `ui-kit/taste-skill`       | Skill `design-taste-frontend`: art direction, composition, copy, and a screenshot look-and-fix loop                                   | Designing or restyling any page or app screen, or when something looks generic                                                                          |
-| `ui-kit/agent-skills`      | Vercel skills: `vercel-react-best-practices`, `vercel-composition-patterns`, `vercel-react-view-transitions`, `web-design-guidelines` | Writing React (performance, component APIs), adding page transitions, reviewing UI and accessibility                                                    |
+| Source (fork)                  | Lives in                                                          | What it is                                                                                          | Use it when                                                                                                                                             |
+| ------------------------------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lea-tinoso/awesome-design-md` | `ui-kit/awesome-design-md`                                        | 84 `DESIGN.md` files, each a design system taken from a real site (colors, type, radii, components) | Starting a project or a new look. Copy one to the project root with `npm run design -- <name>`. The root `DESIGN.md` is the source of truth for tokens. |
+| `lea-tinoso/taste-skill`       | `.claude/skills/design-taste-frontend`                            | Art direction, composition, copy, and a screenshot look-and-fix loop                                | Designing or restyling any page or app screen, or when something looks generic                                                                          |
+| `lea-tinoso/agent-skills`      | `.claude/skills/vercel-*`, `.claude/skills/web-design-guidelines` | Vercel React best practices, composition patterns, view transitions, UI review                      | Writing React (performance, component APIs), adding page transitions, reviewing UI and accessibility                                                    |
 
-The skills are symlinked from `.claude/skills/<name>` into `ui-kit/`, so they load as project skills. If
-`ui-kit/` is empty, run `git submodule update --init`. The deploy, Vercel CLI and React Native skills in
-`agent-skills` are deliberately not linked.
+- The skills are plain copies, so they load in every clone, including cloud sessions that skip submodules.
+  `.claude/skills/skills.lock` records which fork commit each one came from.
+- Do not edit the copied skills. Change the fork, then run `npm run ui-kit:update`, which overwrites them.
+- `ui-kit/awesome-design-md` is only needed for `npm run design`, which fetches it on first use if it is empty.
+- The deploy, Vercel CLI and React Native skills in `agent-skills` are deliberately not copied.
 
 ## Stack
 
@@ -40,5 +43,7 @@ The skills are symlinked from `.claude/skills/<name>` into `ui-kit/`, so they lo
 ## Scripts
 
 - `npm run dev`: start the app
+- `npm run samples -- <direction-id> [...]`: list real sample sites for taste-skill directions
+- `npm run inspect -- <url>`: taste-skill inspector (works as root in cloud sessions; reads `.design-allow`)
 - `npm run design`: list designs. `npm run design -- <name>` copies one to `./DESIGN.md`
-- `npm run ui-kit:update`: pull the latest of every fork, then commit the new submodule pins
+- `npm run ui-kit:update`: re-copy the skills from the latest of each fork and pull the design library, then commit the result
