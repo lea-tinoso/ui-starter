@@ -8,7 +8,8 @@ submodule). There is no component library to import. The kit steers how UI gets 
 
 Before designing or writing any page, component or style, load the `ui-ux` skill
 (`.claude/skills/ui-ux/SKILL.md`). It says which kit skill to use for which job and gives the step-by-step.
-Do not invent a visual style from scratch when the kit covers it.
+Do not invent a visual style from scratch when the kit covers it. Never pick the visual direction for Lea:
+show 2 or 3 directions with clickable sample sites and wait for her pick.
 
 ## What is in the kit
 
@@ -42,5 +43,6 @@ Do not invent a visual style from scratch when the kit covers it.
 ## Scripts
 
 - `npm run dev`: start the app
+- `npm run samples -- <direction-id> [...]`: list real sample sites for taste-skill directions
 - `npm run design`: list designs. `npm run design -- <name>` copies one to `./DESIGN.md`
 - `npm run ui-kit:update`: re-copy the skills from the latest of each fork and pull the design library, then commit the result

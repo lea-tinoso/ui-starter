@@ -10,7 +10,8 @@
     "lint": "oxlint src",
     "format": "prettier --write .",
     "ui-kit:update": "scripts/update-ui-kit.sh",
-    "design": "scripts/use-design.sh"
+    "design": "scripts/use-design.sh",
+    "samples": "node scripts/direction-samples.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

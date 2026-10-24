@@ -22,9 +22,10 @@ If two sources conflict, `DESIGN.md` wins on tokens and `design-taste-frontend` 
 
 ## Build a new page or component
 
-1. **Check the design.** If there is no root `DESIGN.md`, ask which design to use (`npm run design` lists them), then run `npm run design -- <name>` and map its tokens into the `@theme` block of `src/index.css`.
-2. **Reuse first.** Check `src/components/` for something to use or extend before making a new component.
-3. **Direct it.** Run `design-taste-frontend` for the page: brief, direction, sections, words.
-4. **Build it.** Pages go in `src/pages/`, reusable parts in `src/components/`. Use token classes only, with no raw hex values. Follow `vercel-composition-patterns` for variants and `vercel-react-best-practices` for the React code.
-5. **Verify.** Run `npm run lint && npm run build`. Then open the page with `npm run dev` and use the screenshot loop from `design-taste-frontend`.
-6. **Review.** Run `web-design-guidelines` on the changed files and fix what it finds.
+1. **Let the user pick a direction.** For a new project, a new page with no set look, or a restyle, do not choose for the user. Deal 3 directions with `design-taste-frontend` (`draw.mjs --options 3`) and run `npm run samples -- <id> <id> <id>` to get real sample sites for each. Show 2 or 3 directions, each with its name, a one-line idea, main colours, 3 to 5 clickable sample sites, and what it would look like for this project. Then wait for the pick. This overrides the taste skill's "you choose" step.
+2. **Set the tokens.** If there is no root `DESIGN.md`, offer the closest designs from `npm run design` for the picked direction, run `npm run design -- <name>`, and map its tokens into the `@theme` block of `src/index.css`.
+3. **Reuse first.** Check `src/components/` for something to use or extend before making a new component.
+4. **Direct it.** Continue `design-taste-frontend` with the picked direction (`--direction <id>`): sections, idea, words.
+5. **Build it.** Pages go in `src/pages/`, reusable parts in `src/components/`. Use token classes only, with no raw hex values. Follow `vercel-composition-patterns` for variants and `vercel-react-best-practices` for the React code.
+6. **Verify.** Run `npm run lint && npm run build`. Then open the page with `npm run dev` and use the screenshot loop from `design-taste-frontend`.
+7. **Review.** Run `web-design-guidelines` on the changed files and fix what it finds.
