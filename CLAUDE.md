@@ -44,5 +44,6 @@ show 2 or 3 directions with clickable sample sites and wait for her pick.
 
 - `npm run dev`: start the app
 - `npm run samples -- <direction-id> [...]`: list real sample sites for taste-skill directions
+- `npm run inspect -- <url>`: taste-skill inspector (works as root in cloud sessions; reads `.design-allow`)
 - `npm run design`: list designs. `npm run design -- <name>` copies one to `./DESIGN.md`
 - `npm run ui-kit:update`: re-copy the skills from the latest of each fork and pull the design library, then commit the result

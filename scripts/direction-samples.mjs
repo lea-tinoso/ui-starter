@@ -27,7 +27,10 @@ for (const id of ids) {
   console.log(direction.idea)
   for (const siteId of direction.seenIn) {
     const site = sites.get(siteId)
-    if (site) console.log(`- ${site.name}: ${site.url}`)
+    if (!site) continue
+    const swatches = site.colour.split(' — ')[0]
+    console.log(`- ${site.name}: ${site.url}`)
+    console.log(`  mood: ${site.mood.join(', ')} | colours: ${swatches}`)
   }
   console.log()
 }
