@@ -1,0 +1,12 @@
+[submodule "ui-kit/taste-skill"]
+	path = ui-kit/taste-skill
+	url = https://github.com/lea-tinoso/taste-skill.git
+	branch = main
+[submodule "ui-kit/agent-skills"]
+	path = ui-kit/agent-skills
+	url = https://github.com/lea-tinoso/agent-skills.git
+	branch = main
+[submodule "ui-kit/awesome-design-md"]
+	path = ui-kit/awesome-design-md
+	url = https://github.com/lea-tinoso/awesome-design-md.git
+	branch = main
