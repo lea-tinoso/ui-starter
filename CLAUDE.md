@@ -21,7 +21,7 @@ Do not invent a visual style from scratch when the kit covers it.
 - The skills are plain copies, so they load in every clone, including cloud sessions that skip submodules.
   `.claude/skills/skills.lock` records which fork commit each one came from.
 - Do not edit the copied skills. Change the fork, then run `npm run ui-kit:update`, which overwrites them.
-- `ui-kit/awesome-design-md` is only needed for `npm run design`. If it is empty, run `git submodule update --init`.
+- `ui-kit/awesome-design-md` is only needed for `npm run design`, which fetches it on first use if it is empty.
 - The deploy, Vercel CLI and React Native skills in `agent-skills` are deliberately not copied.
 
 ## Stack

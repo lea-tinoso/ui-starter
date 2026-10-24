@@ -6,8 +6,8 @@ cd "$(git rev-parse --show-toplevel)"
 dir=ui-kit/awesome-design-md/design-md
 
 if [ ! -d "$dir" ]; then
-  echo "ui-kit is empty. Run: git submodule update --init" >&2
-  exit 1
+  echo "Fetching the design library (ui-kit/awesome-design-md)..."
+  git submodule update --init --quiet ui-kit/awesome-design-md
 fi
 if [ $# -eq 0 ]; then
   ls "$dir" | column

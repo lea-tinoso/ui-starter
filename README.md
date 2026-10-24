@@ -23,8 +23,8 @@ On GitHub, open this repo's **Settings**, then under **General** tick **Template
    git clone --recurse-submodules https://github.com/lea-tinoso/<new-project>.git
    cd <new-project>
    ```
-   If you already cloned without the flag, run `git submodule update --init`. The skills work either way;
-   only `npm run design` needs the submodule.
+   Cloning without the flag also works: the skills are plain files, and `npm run design` fetches the
+   design library on first use.
 3. Pull the latest of every fork:
    ```sh
    npm run ui-kit:update   # same as scripts/update-ui-kit.sh
