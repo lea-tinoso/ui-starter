@@ -1,6 +1,6 @@
 ---
 name: ui-ux
-description: Entry point for all UI work in this repo. Routes to the ui-kit skills (design-taste-frontend, Vercel React skills, web-design-guidelines) and the project DESIGN.md, and gives the step-by-step for building a new page or component. Use whenever you design, build, restyle or review a page, screen, component, layout or style.
+description: Entry point for all UI work in this repo. Routes to the kit skills (design-taste-frontend, Vercel React skills, web-design-guidelines) and the project DESIGN.md, and gives the step-by-step for building a new page or component. Use whenever you design, build, restyle or review a page, screen, component, layout or style.
 ---
 
 # UI/UX in this repo
