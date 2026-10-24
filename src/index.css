@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens. Placeholder neutral values until the project picks a design:
+ *   1. npm run design -- <name>   (copies ui-kit/awesome-design-md/design-md/<name>/DESIGN.md to ./DESIGN.md)
+ *   2. Map the DESIGN.md `colors`, `typography` and `rounded` values onto these tokens.
+ * Components use only these tokens (bg-canvas, text-ink, rounded-control ...), never raw hex values.
+ */
+@theme {
+  --color-canvas: #ffffff;
+  --color-surface: #f5f5f4;
+  --color-ink: #1c1917;
+  --color-body: #57534e;
+  --color-mute: #a8a29e;
+  --color-hairline: #e7e5e4;
+  --color-primary: #1c1917;
+  --color-on-primary: #ffffff;
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-display: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --radius-control: 0.5rem;
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-body antialiased;
+  }
+}

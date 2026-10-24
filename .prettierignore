@@ -1,0 +1,4 @@
+ui-kit/
+.claude/skills/*/
+!.claude/skills/ui-ux/
+package-lock.json
